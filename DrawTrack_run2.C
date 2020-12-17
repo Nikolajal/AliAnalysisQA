@@ -1,5 +1,5 @@
-#include "../utils/style.C"
-#include "../config.C"
+#include "./utils/style.C"
+#include "./config.C"
 //**** change trigger and MCtrigger accordingly
 
 TString histotagname, xaxisTitle;
@@ -84,7 +84,7 @@ void DrawTrack(TString datatagname , TString mctagname, Float_t maxy)
   filename        += ".root";
  
   TFile *findata   = TFile::Open(filename);
-  TList *lindata   = (TList*)findata->Get(Form("RsnOut_Lambda1520_PbPb%s", trigger.Data()));
+  TList *lindata   = (TList*)findata->Get(Form("RsnOut_f0"));
   TH1F *hevent     = (TH1F*)lindata->FindObject(Form("Lambda1520_PbPb%s_eventVtx", trigger.Data()));
 
   //Monte-Carlo File

@@ -8,7 +8,7 @@ TString detname[3]      = {"TPC", "TOF", "TPC-dEdx"};
 TString partname[2]     = {"kaon", "proton"};
 Double_t Xmin[3]        = {-10., -10., 0.,};
 Double_t Xmax[3]        = {10., 10., 500.};
-TString histoname[3][2] = { "cutQuality.TPC_nsigmaK_VsPtpc_pTPC_K", "cutQuality.TPC_nsigmaPro_VsPtpc_pTPC_p",
+TString histoname[2][2] = { "cutQuality.TPC_nsigmaK_VsPtpc_pTPC_K", "cutQuality.TPC_nsigmaPro_VsPtpc_pTPC_p",
     "cutQuality.TOF_nsigmaK_vsP_p_K", "cutQuality.TOF_nsigmaPro_vsP_p_p"};//,
 			    //"cutKaon.dEdx_VsPtpc_pTPC_sTPC", "cutProton.dEdx_VsPtpc_pTPC_sTPC" };
 
@@ -37,7 +37,7 @@ void DrawPID_run2()
 
 void DrawPID(TString datatagname, TString extratag)
 {
-  for (Int_t i = 0; i < 3; i++)
+  for (Int_t i = 0; i < 2; i++)
     for (Int_t j = 0; j < 2; j++)
       DrawPID_detector_particle(datatagname, i, j, extratag);
 }
