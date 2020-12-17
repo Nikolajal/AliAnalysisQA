@@ -1,5 +1,5 @@
-#include "../utils/style.C"
-#include "../config.C"
+#include "./utils/style.C"
+#include "./config.C"
 
 TString Trigger         = "";
 Float_t MinPt           = 0.1;
@@ -9,8 +9,8 @@ TString partname[2]     = {"kaon", "proton"};
 Double_t Xmin[3]        = {-10., -10., 0.,};
 Double_t Xmax[3]        = {10., 10., 500.};
 TString histoname[3][2] = { "cutQuality.TPC_nsigmaK_VsPtpc_pTPC_K", "cutQuality.TPC_nsigmaPro_VsPtpc_pTPC_p",
-			    "cutQuality.TOF_nsigmaK_vsP_p_K", "cutQuality.TOF_nsigmaPro_vsP_p_p",
-			    "cutKaon.dEdx_VsPtpc_pTPC_sTPC", "cutProton.dEdx_VsPtpc_pTPC_sTPC" };
+    "cutQuality.TOF_nsigmaK_vsP_p_K", "cutQuality.TOF_nsigmaPro_vsP_p_p"};//,
+			    //"cutKaon.dEdx_VsPtpc_pTPC_sTPC", "cutProton.dEdx_VsPtpc_pTPC_sTPC" };
 
 
 void DrawPID(TString datatagname, TString extratag);
@@ -54,7 +54,7 @@ void DrawPID_detector_particle(TString datatagname, Int_t det, Int_t part, TStri
   TFile *findata = TFile::Open(filename);
   if(det == 0 && part == 00)
     cout << " ****** File to make QA:  " << filename.Data() << ",  trigger = " << Trigger.Data() << endl << endl;
-  TList *lindata = (TList*)findata->Get(Form("RsnOut_Lambda1520_PbPb%s", Trigger.Data()));
+  TList *lindata = (TList*)findata->Get(Form("RsnOut_f0"));
   //
   //
   TH2 *hin = (TH2 *)lindata->FindObject(histoname[det][part].Data());

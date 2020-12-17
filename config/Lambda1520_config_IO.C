@@ -4,8 +4,8 @@
 /*************************************************************************
   deafult directories and files
 **************************************************************************/
-TString basedir        = "~/Downloads/";
-TString outbasedir     = "~/Downloads/outputdir";
+TString basedir        = "";
+TString outbasedir     = "./outputdir";
 //
 TString outdirname      = "UNDEFINED/";
 TString figuresdirname  = outdirname + "figures/";
