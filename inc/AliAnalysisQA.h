@@ -1,5 +1,5 @@
 # ifndef    ALIANALYSISQA_h
-# def       ALIANALYSISQA_h
+# define    ALIANALYSISQA_h
 
 # include "AliAnalysisQAPID.h"
 
@@ -31,10 +31,10 @@ TString fOutput_Directory_Track =   "Track";
 void fGenerateOutputDirectories()   {
     
     // Generate Output PID QA directory
-    gROOT->ProcessLine(Form("mkdir -p ./%s/%s",fOutput_Directory,fOutput_Directory_PID));
+    gROOT->ProcessLine(Form(".! mkdir -p %s/%s",fOutput_Directory.Data(),fOutput_Directory_PID.Data()));
     
     // Generate Output Track QA directory
-    gROOT->ProcessLine(Form("mkdir -p ./%s/%s",fOutput_Directory,fOutput_Directory_Track));
+    gROOT->ProcessLine(Form(".! mkdir -p %s/%s",fOutput_Directory.Data(),fOutput_Directory_Track.Data()));
 }
 
 #endif
