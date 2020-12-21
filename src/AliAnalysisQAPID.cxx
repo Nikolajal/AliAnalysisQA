@@ -1,5 +1,9 @@
 #include "../inc/AliAnalysisQAPID.h"
 
+void    fDrawDetectorCut    ( Double_t fCutValues[][] )
+{
+    
+}
 /*
 void    fDrawSelection  ()  {
     
