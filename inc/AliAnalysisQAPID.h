@@ -12,6 +12,7 @@
 // >-> Detectors
 TString     fDetectors[]        =   {"TOF","TPC"};
 Double_t    fTOFCut1[]          =   {-3,+3,1,100};
+//
 // >-> Particles
 TString     fParticles[]        =   {"TOF","TPC"};
 //

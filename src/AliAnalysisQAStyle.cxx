@@ -1,5 +1,27 @@
 #include "../inc/AliAnalysisQAStyle.h"
+//
+void    fSetColorScheme         ( TH1F* fTarget, Bool_t isData )    {
+    if ( isData )   {
+        fTarget         ->  SetMarkerStyle(42);
+        fTarget         ->  SetMarkerColor(38);
+        fTarget         ->  SetLineColor(38);
+        fTarget         ->  SetFillColorAlpha(38,.33);
+        //
+    }   else    {
+        fTarget         ->  SetMarkerStyle(27);
+        fTarget         ->  SetMarkerColor(46);
+        fTarget         ->  SetLineColor(46);
+        fTarget         ->  SetFillColorAlpha(46,.33);
+        
+    }
+}
 
+
+
+
+
+// LEGACY //
+/*
 void style()
 {
   
@@ -21,12 +43,11 @@ void style()
   //  gStyle->SetTitleTextColor(0);
   //  gStyle->SetTitleFillColor(0);
   
-  /*
     gStyle->SetTitleColor(0);
     gStyle->SetTitleBorderSize(0);
     gStyle->SetTitleTextColor(0);
     gStyle->SetTitleFillColor(0);
-  */
+  
   gStyle->SetPalette(1);
   gStyle->SetCanvasColor(0);
   gStyle->SetHistFillColor(0);
@@ -37,14 +58,12 @@ void style()
   gStyle->SetAxisColor(1, "X");
   gStyle->SetAxisColor(1, "Y");
   gStyle->SetAxisColor(1, "Z");
-  /*
     gStyle->SetLabelColor(0, "X");
     gStyle->SetLabelColor(0, "Y");
     gStyle->SetLabelColor(0, "Z");
     gStyle->SetTickLength(0.0, "X");
     gStyle->SetTickLength(0.0, "Y");
     gStyle->SetTickLength(0.0, "Z");
-  */
   gStyle->SetTitleXSize(0.05);
   gStyle->SetTitleYSize(0.05);
   gStyle->SetNdivisions(506, "X");
@@ -105,3 +124,4 @@ void SetHistoStyle(TH1 *h, Int_t m, Int_t c, Int_t w = 1, Int_t s = 1)
   if (m == 0)
     h->SetMarkerSize(0);
 }
+*/

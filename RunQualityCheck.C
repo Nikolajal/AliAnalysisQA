@@ -4,7 +4,13 @@ void RunQualityCheck()  {
     
     // Generate, if necessary, all the folders for the output
     fGenerateOutputDirectories();
+    if ( !fSetInputHistograms() ) { cout << "ahiahi" << endl; return;}
     
-    fCheckSelection("TOF","Kaon");
-    //fCheckVertex();
+    fCheckFllTrack();
+    fCheckFllTrack("Kaons");
+    fCheckSelection();
+    fCheckSelection("Kaons","TOF");
+    fCheckPIDSigma();
+    fCheckPIDSigma("Kaons","TOF");
+    fCheckVertexPosition();
 }
